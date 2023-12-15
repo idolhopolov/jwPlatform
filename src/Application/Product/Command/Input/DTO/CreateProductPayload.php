@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\Product\Command\Input\DTO;
 
 use JMS\Serializer\Annotation\Groups;

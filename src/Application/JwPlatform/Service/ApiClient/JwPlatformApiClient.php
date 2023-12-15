@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\JwPlatform\Service\ApiClient;
 
 use App\Application\JwPlatform\Service\ApiClient\Response\DefaultJwPlatformApiClientResponse;

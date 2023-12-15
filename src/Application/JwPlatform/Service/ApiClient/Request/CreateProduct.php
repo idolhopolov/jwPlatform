@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\JwPlatform\Service\ApiClient\Request;
 
 use App\Application\Common\Service\ApiClient\BaseRequest;

@@ -8,21 +8,12 @@ use App\Application\Common\Service\ApiClient\BaseRequest;
 
 abstract class ProxyClientRequest extends BaseRequest implements \JsonSerializable
 {
-    protected string $method;
-    protected string $endpoint;
-    protected array $content;
-    protected array $headers;
-    
     public function __construct(
-        string $method,
-        string $endpoint,
-        array $content,
-        array $headers
+        protected readonly string $method,
+        protected readonly string $endpoint,
+        protected readonly array $content,
+        protected readonly array $headers
     ) {
-        $this->method = $method;
-        $this->endpoint = $endpoint;
-        $this->content = $content;
-        $this->headers = $headers;
     }
     
     public function getPayload(): ?\JsonSerializable

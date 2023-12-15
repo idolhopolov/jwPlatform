@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\UserInterface\Common\Http\Rest;
 
 use App\Application\Common\Command\Bus\CommandBusInterface;

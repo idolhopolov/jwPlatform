@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\Product\Query\Input\DTO;
 
 readonly class GetSingleProductInput implements \JsonSerializable

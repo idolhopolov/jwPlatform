@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Application\Product\Query\GetSingleProductQuery;
 
 use App\Application\Common\Query\QueryInterface;
@@ -8,7 +10,7 @@ use App\Application\Product\Query\Input\DTO\GetSingleProductInput;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]
-class GetSingleProductQueryHandler implements QueryHandlerInterface
+readonly class GetSingleProductQueryHandler implements QueryHandlerInterface
 {
     public function __construct(
         private JwPlatformApiClient $apiClient,

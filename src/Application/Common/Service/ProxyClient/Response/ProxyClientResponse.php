@@ -6,8 +6,8 @@ namespace App\Application\Common\Service\ProxyClient\Response;
 
 abstract class ProxyClientResponse
 {
-    protected array|string $response;
-    protected int $code;
+    protected readonly array|string $response;
+    protected readonly int $code;
     
     public function __construct(...$result)
     {

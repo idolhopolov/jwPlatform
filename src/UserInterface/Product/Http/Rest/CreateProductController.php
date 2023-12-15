@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\UserInterface\Product\Http\Rest;
 
 use App\Application\Common\DTO\Response as ApiResponse;
