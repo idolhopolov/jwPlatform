@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Application\JwPlatform\Service\ApiClient;
 
 use App\Application\Common\Service\ApiClient\AbstractCommonApiClient;
-use App\Application\JwPlatform\DTO\ApiClient\JwPlatformApiClientConfiguration;
 use App\Application\JwPlatform\Service\ApiClient\Request\CreateProduct;
 use App\Application\JwPlatform\Service\ApiClient\Request\GetProduct;
 use App\Application\JwPlatform\Service\ApiClient\Response\JwPlatformApiClientResponse;
