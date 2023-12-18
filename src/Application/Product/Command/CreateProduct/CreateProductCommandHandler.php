@@ -9,14 +9,14 @@ use App\Application\JwPlatform\Service\ApiClient\JwPlatformApiClientInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]
-readonly class CreateResourceCommandHandler implements CommandHandlerInterface
+readonly class CreateProductCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
         private JwPlatformApiClientInterface $apiClient
     ) {
     }
 
-    public function __invoke(CreateResourceCommand $command): void
+    public function __invoke(CreateProductCommand $command): void
     {
         $payload = $command->getPayload();
 
