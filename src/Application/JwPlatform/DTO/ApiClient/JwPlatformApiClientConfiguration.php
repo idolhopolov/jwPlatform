@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Application\JwPlatform\Service\ApiClient;
+namespace App\Application\JwPlatform\DTO\ApiClient;
 
 use App\Application\Common\Service\ApiClient\CommonConfigurationApiClientInterface;
 
