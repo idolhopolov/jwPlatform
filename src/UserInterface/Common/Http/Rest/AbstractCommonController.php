@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-abstract class CommonController
+abstract class AbstractCommonController
 {
     public function __construct(
         private readonly ValidatorInterface $validator,

@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 namespace App\Application\JwPlatform\Service\ApiClient\Request;
 
-use App\Application\Common\Service\ApiClient\BaseRequest;
+use App\Application\Common\Service\ApiClient\Request\RequestInterface;
+use App\Application\Common\Service\ApiClient\Response\ResponseInterface;
+use App\Application\JwPlatform\Service\ApiClient\Response\JwPlatformApiClientResponse;
 use App\Application\Product\Command\Input\DTO\CreateProductPayload;
 
-class CreateProduct extends BaseRequest
+readonly class CreateProduct implements RequestInterface
 {
     public function __construct(
-        private readonly CreateProductPayload $payload
+        private CreateProductPayload $payload
     ) {
     }
 
@@ -29,8 +31,18 @@ class CreateProduct extends BaseRequest
         return Http::METHOD_POST;
     }
 
-    public function transformResponse(array $response): array
+    public function transformResponse(array $response, int $code): ResponseInterface
     {
-        return $response['data'] ?? [];
+        return new JwPlatformApiClientResponse($response, $code);
+    }
+
+    public function getRequestParams(): array
+    {
+        return [];
+    }
+
+    public function getHeaders(): array
+    {
+        return [];
     }
 }

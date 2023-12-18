@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\Common\Service\ApiClient;
+namespace App\Application\Common\Service\ApiClient\Request;
 
-interface Request
+use App\Application\Common\Service\ApiClient\Response\ResponseInterface;
+
+interface RequestInterface
 {
     public function getRequestParams(): array;
 
@@ -16,6 +18,6 @@ interface Request
 
     public function getEndpoint(): string;
 
-    public function transformResponse(array $response): array;
+    public function transformResponse(array $response, int $code): ResponseInterface;
     
 }

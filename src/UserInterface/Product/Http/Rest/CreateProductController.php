@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 #[Route(path: '/api/v1', name: 'xxx')]
 #[OA\Tag(name: 'xxx / xxx')]
-class CreateProductController extends CommonController
+class CreateProductController extends AbstractCommonController
 {
 
     #[OA\Response(

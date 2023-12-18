@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace App\Application\Common\Service\ApiClient;
 
-abstract class ApiClient
+use App\Application\Common\Service\ApiClient\Request\RequestInterface;
+use App\Application\Common\Service\ApiClient\Response\ResponseInterface;
+
+abstract class AbstractCommonApiClient
 {
-    protected function call(Request $request, $responseIsString = false): array
+    protected function call(RequestInterface $request): ResponseInterface
     {
         try {
             $response = $this->createHttpClient()->request(
@@ -17,11 +20,8 @@ abstract class ApiClient
                     'json' => $request->getPayload(),
                 ]
             );
-            $content = $responseIsString
-                ? $response->getContent(false)
-                : $response->toArray(false);
 
-            return $request->transformResponse([$content, $response->getStatusCode()]);
+            return $request->transformResponse($response->toArray(false), $response->getStatusCode());
         } catch (\Throwable $e) {
             throw new ApiClientException('Unable to communicate with API: ['.$e->getCode().'] '.$e->getMessage());
         }
